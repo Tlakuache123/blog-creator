@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { Blog, Prisma } from '@prisma/client';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class BlogsService {
-  constructor(readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   create(data: Prisma.BlogCreateInput): Promise<Blog> {
     return this.prisma.blog.create({ data });
