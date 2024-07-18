@@ -1,7 +1,3 @@
-import { User } from '@prisma/client';
+import { BaseUserDto } from './base-user.dto';
 
-export class CreateUserDto implements User {
-  id: number;
-  email: string;
-  name: string;
-}
+export class CreateUserDto extends BaseUserDto {}
